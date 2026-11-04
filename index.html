@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PULSE OS — Analytics para pequenos negócios (demonstração)</title>
+    <meta
+      name="description"
+      content="PULSE OS é um painel de analytics demonstrativo com KPIs, conversão por canal, carteira de clientes, transações pesquisáveis e exportação CSV. Dados simulados."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#040810" />
+    <link rel="canonical" href="https://pulse-os-demo.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PULSE OS — O pulso do seu negócio" />
+    <meta property="og:description" content="Painel de analytics demonstrativo com dados simulados para pequenos negócios e operações digitais." />
+    <meta property="og:url" content="https://pulse-os-demo.vercel.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PULSE OS",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Painel de analytics demonstrativo com dados simulados para pequenos negócios.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL", "description": "Demonstração pública gratuita" }
+      }
+    </script>
+
+    <script>
+      // Aplica o tema salvo antes do primeiro paint, evitando "piscar" de cor.
+      (function () {
+        try {
+          var raw = localStorage.getItem('pulse-os:settings:v1');
+          var theme = raw ? JSON.parse(raw).theme : 'dark';
+          var anim = raw ? JSON.parse(raw).animations : true;
+          document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+          if (anim === false) document.documentElement.dataset.animations = 'off';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Este painel de demonstração precisa de JavaScript para funcionar.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
