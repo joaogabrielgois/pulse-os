@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HeroDashboard } from './HeroDashboard';
+import heroPhoto from './pulse-hero.jpg';
 import { Logo } from '../components/Logo';
 import { Reveal } from '../components/ui';
 import { usePageMeta } from '../hooks';
@@ -161,7 +162,8 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative isolate overflow-hidden">
+      <img src={heroPhoto} alt="" fetchPriority="high" className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right opacity-25" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-[560px] bg-grid opacity-50" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-16 md:px-8 md:pb-28 md:pt-24 lg:grid-cols-[1.05fr_1fr]">
         <div className="animate-rise">
